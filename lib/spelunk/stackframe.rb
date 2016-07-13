@@ -29,7 +29,7 @@ class Spelunk
     end
 
     def locals
-      bnd.local_variables.map { |name|
+      bnd.send(:local_variables).map { |name|
         [name, bnd.local_variable_get(name)]
       }.to_h
     end

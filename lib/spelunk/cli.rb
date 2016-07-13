@@ -175,7 +175,7 @@ class Spelunk
     end
 
     def highlight_ruby(ruby_code, &block)
-      formatter = Rouge::Formatters::Terminal256.new theme: 'molokai'
+      formatter = Rouge::Formatters::Terminal256.new
       lexer     = Rouge::Lexers::Ruby.new
       tokens    = lexer.lex ruby_code
       formatter.format(tokens).lines.map(&:chomp).map.with_index(1, &block).join
